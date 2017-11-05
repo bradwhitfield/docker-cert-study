@@ -31,6 +31,9 @@ resource "google_compute_instance" "manager" {
 
   depends_on = ["google_compute_instance.node1", "google_compute_instance.node2"]
 
+  // Pretty sure this doesn't work because CoreOS doesn't want you to run bash scripts at startup
+  // I probably won't fix this since I need to log into the manager anyways
+  // Instead run "curl curl 169.254.169.254/0.1/meta-data/attributes/startup-script -o startup.sh && chmod +x startup.sh && ./startup.sh"
   metadata_startup_script = "${data.template_file.manager_init.rendered}"
 }
 
