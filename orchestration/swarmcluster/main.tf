@@ -25,9 +25,24 @@ resource "google_compute_instance" "manager" {
   }
 
   scheduling {
-    preemptible = "${var.is_preemptible}"
+    preemptible       = "${var.is_preemptible}"
     automatic_restart = false
   }
+
+  depends_on = ["google_compute_instance.node1", "google_compute_instance.node2"]
+
+  metadata_startup_script = "${data.template_file.manager_init.rendered}"
+}
+
+data "template_file" "manager_init" {
+  template = "${file("files/manager.tpl")}"
+
+  vars {
+    node1_ip = "${google_compute_instance.node1.network_interface.0.address}"
+    node2_ip = "${google_compute_instance.node2.network_interface.0.address}"
+  }
+
+  depends_on = ["google_compute_instance.node1", "google_compute_instance.node2"]
 }
 
 resource "google_compute_instance" "node1" {
@@ -52,8 +67,12 @@ resource "google_compute_instance" "node1" {
   }
 
   scheduling {
-    preemptible = "${var.is_preemptible}"
+    preemptible       = "${var.is_preemptible}"
     automatic_restart = false
+  }
+
+  metadata = {
+    user-data = "${file("files/node.ign")}"
   }
 }
 
@@ -79,7 +98,11 @@ resource "google_compute_instance" "node2" {
   }
 
   scheduling {
-    preemptible = "${var.is_preemptible}"
+    preemptible       = "${var.is_preemptible}"
     automatic_restart = false
+  }
+
+  metadata = {
+    user-data = "${file("files/node.ign")}"
   }
 }
