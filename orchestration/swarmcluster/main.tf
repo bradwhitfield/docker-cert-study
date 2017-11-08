@@ -12,7 +12,7 @@ resource "google_compute_instance" "manager" {
 
   boot_disk {
     initialize_params {
-      image = "coreos-stable-1520-8-0-v20171026"
+      image = "coreos-cloud/coreos-alpha"
     }
   }
 
@@ -57,7 +57,7 @@ resource "google_compute_instance" "node1" {
 
   boot_disk {
     initialize_params {
-      image = "coreos-stable-1520-8-0-v20171026"
+      image = "coreos-cloud/coreos-alpha"
     }
   }
 
@@ -88,7 +88,7 @@ resource "google_compute_instance" "node2" {
 
   boot_disk {
     initialize_params {
-      image = "coreos-stable-1520-8-0-v20171026"
+      image = "coreos-cloud/coreos-alpha"
     }
   }
 
