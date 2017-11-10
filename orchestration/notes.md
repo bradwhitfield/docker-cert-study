@@ -42,3 +42,19 @@ Should probably explore volumes more.
 
 * version 3 of compose only allows deploying pre-built images when running deploy stack.
 * build context can be a github repo.
+
+# Diagnose Broken services
+
+Re-read this later.
+
+https://docs.docker.com/engine/swarm/how-swarm-mode-works/services/#pending-services
+
+and probably this
+
+https://docs.docker.com/engine/swarm/services/
+
+# Automated Builds
+
+Although not part of the exam, I wanted to set this up anyways. Dockers main documentation for this
+was incorrect in saying you could select limited access. I was able to setup the builds following
+any older piece of [documentation](https://docs.docker.com/docker-hub/builds/#remote-build-triggers) I found on there site.
