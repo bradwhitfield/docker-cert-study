@@ -13,3 +13,7 @@ variable "is_preemptible" {
 variable "machine_type" {
   default = "n1-standard-1"
 }
+
+variable "backup" {
+  default = false
+}
