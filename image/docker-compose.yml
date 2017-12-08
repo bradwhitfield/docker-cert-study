@@ -1,0 +1,31 @@
+version: "3.3"
+services:
+  registry:
+    image: registry:2
+    ports:
+      - 443:443
+    networks:
+      - registry
+    secrets:
+      - registry.key
+      - registry.crt
+      - htpasswd
+    environment:
+      REGISTRY_HTTP_ADDR: "0.0.0.0:443"
+      REGISTRY_HTTP_TLS_CERTIFICATE: /run/secrets/registry.crt
+      REGISTRY_HTTP_TLS_KEY: /run/secrets/registry.key
+      REGISTRY_AUTH: htpasswd
+      REGISTRY_AUTH_HTPASSWD_PATH: /run/secrets/htpasswd
+      REGISTRY_AUTH_HTPASSWD_REALM: Registry Realm
+    deploy:
+      mode: replicated
+      replicas: 1
+networks:
+  registry:
+secrets:
+  registry.key:
+    external: true
+  registry.crt:
+    external: true
+  htpasswd:
+    external: true
