@@ -110,3 +110,10 @@ docker node ls
 exit
 terraform destroy
 ```
+
+# To Remember
+
+* docker node demote <nodeid>
+* docker node update --availability drain <nodeid>
+* docker kill <container>
+* docker service scale <servicename>=<number> # Syntax seems wrong to me.

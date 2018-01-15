@@ -18,3 +18,7 @@ From here: https://blog.docker.com/2016/12/understanding-docker-networking-drive
 The overlay driver utilizes an industry-standard VXLAN data plane that decouples the container network from the underlying physical network (the underlay).
 
 Need to read more into MACVLAN networks.
+
+There are lots of UCP components, and I don't know how much you'll need to know for the exam about which does what.
+I'll rewatch this to be safe.
+https://linuxacademy.com/cp/courses/lesson/course/1377/lesson/8/completed/7/module/150
