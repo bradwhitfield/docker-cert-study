@@ -81,3 +81,10 @@ Basically, create a group of resources, and create teams, then say who can do wh
 ## UCP Notes
 
 In a Docker EE Swarm, manager should not run workloads. They should run UCP controllers, and nothing else.
+
+### DTR APIs
+
+* `/health` return status and error message, if applicable
+* `/_ping` is the same, but is unauthenticated
+* `/api/v0/meta/cluster_stats` returns all the details about the DTR replicas health status
+* `/nginx_status` does what you think it does

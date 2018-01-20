@@ -1,0 +1,28 @@
+{
+  "ignition": {
+    "config": {},
+    "timeouts": {},
+    "version": "2.1.0"
+  },
+  "networkd": {},
+  "passwd": {
+    "users": [
+      {
+        "name": "core",
+        "sshAuthorizedKeys": [
+          "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0VkMs9bmmAxQ5Xhw4VLntf24WzlxmRa+v23+6nrKMSdRBe5OhHRMpPB/gukEcHVACd8vjTKOZg2xVfovaQWsp/0ZJQXN5MQ9QvGUndCdh/GvrVS0jEjMVcwMjKkGkK2NT7nA/U/O8i7xgQwzxFVcDJ6l1OOf+DmOD0/p6y+OZBZ48nvz0B+zGoRxVmbFI+F4IP1Lsjq5CrsPQr77Bn9+sIo3hh0GZJTZkNyWbBt7k/a0FyySqCr6IzqhBApL8iucatK2lA+OawtIG67isrDdczgIPdFpS0o8I8wI18kQqZcpLCt83cAOIytinPqBeJ+Im7I4jAvN1EkWoE6gv9Qo5 bradswhitfield@gmail.com"
+        ]
+      }
+    ]
+  },
+  "storage": {},
+  "systemd": {
+    "units": [
+      {
+        "contents": "[Unit]\nDescription=Docker Socket for the API\n\n[Socket]\nListenStream=2375\nBindIPv6Only=both\nService=docker.service\n\n[Install]\nWantedBy=sockets.target",
+        "enable": true,
+        "name": "docker-tcp.socket"
+      }
+    ]
+  }
+}

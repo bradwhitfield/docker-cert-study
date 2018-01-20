@@ -22,3 +22,7 @@ Need to read more into MACVLAN networks.
 There are lots of UCP components, and I don't know how much you'll need to know for the exam about which does what.
 I'll rewatch this to be safe.
 https://linuxacademy.com/cp/courses/lesson/course/1377/lesson/8/completed/7/module/150
+
+Review this video, and the components, of UCP, and DTR.
+
+https://docs.docker.com/v17.09/datacenter/dtr/2.4/guides/architecture/
