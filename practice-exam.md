@@ -89,15 +89,16 @@ Docker will display the necessary information for a manager or node to join a cl
 Further Reading
 https://linuxacademy.com/cp/courses/lesson/course/1376/lesson/5/module/150
 
-37) In Docker UCP Security, the term 'RBAC' stands for what?
+
+12) If you want an instantiated container named 'myweb' to have a path inside of it called '/my/data/volume', which command would accomplish this?
 
 Correct
 
 Correct answer
-Role Based Access Control
+docker run -d --name myweb -V /my/data/volume httpd:latest
 
 Explanation
-RBAC is an acronym that determines what a user, team, or organization has access to on the cluster based on the role granted to them.
+The option '-V /my/data/volume' will cause the container to have that volume available but not link to anything on the underlying host.
 
 Further Reading
-https://linuxacademy.com/cp/courses/lesson/course/1378/lesson/4/module/150
+https://linuxacademy.com/cp/courses/lesson/course/1379/lesson/3/module/150
