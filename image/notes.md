@@ -43,6 +43,7 @@ Bash for create the testing insecure registry testing.
 ```bash
 # On my computer
 terraform apply # in `docker-cert-study/orchestration/swarm-cluster/`
+# Note this is the pathing for WSL.
 gcloud compute scp --zone "us-east1-b" /mnt/c/Users/bradw/projects/docker-cert-study/image/docker-compose.yml manager1:~/docker-compose.yml # in `docker-cert-study/images/`
 # On manager1 once created
 openssl req \
@@ -62,7 +63,7 @@ Essentially this is just opt-in signing for container versions.
 Require Docker Content Trust with `export DOCKER_CONTENT_TRUST=1` and Docker will only work with signed tags.
 To bypass for one command execution, you can pass the `--disable-content-trust` flag to the CLI.
 
-To sign an image, have the `DOCKER_CONTENT_TRUST` set, issue a `docker push`. This will have Docker generaate
+To sign an image, have the `DOCKER_CONTENT_TRUST` set, issue a `docker push`. This will have Docker generate
 a root certificate for you, and store it in ~/.docker/trust registry.
 
 ## Secrets

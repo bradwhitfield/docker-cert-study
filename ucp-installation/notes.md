@@ -20,7 +20,7 @@ sudo yum install install -y docker-ee
 ```
 
 The storage driver has to be `devicemapper` in EE, apparently and "on production systems, you must use `direct-lvm` mode, which requires
-one or more dedicated block devices", but I'm not sure what `direct-lvm` is yet.
+one or more dedicated block devices". This means that Docker will provision drive space as it needs it on the block device, basically. Then you can extend the block device later.
 
 By default, the device driver is configured in `/etc/docker/daemon.json`, and with `devicemapper`, it would look like this.
 

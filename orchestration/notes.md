@@ -5,7 +5,7 @@ https://docs.docker.com/get-started/
 # Locking the Cluster
 
 * Feature was released in support of Docker secrets.
-* I think the they use to lock the cluster key is used to decyrpt the Mutual TLS and Raft log encryption keys.
+* I think that the key used to lock the cluster key is used to decyrpt the Mutual TLS and Raft log encryption keys.
 * You do not need the unlock-key to join a new manager - I tested to confirm this.
 
 ## Something Like this
@@ -28,9 +28,9 @@ docker swarm unlock-key --rotate
 ## DAB Files
 
 Never heard of this [DAB file stuff](https://docs.docker.com/compose/bundles/#overview). I suspect
-this wont' be any sort of focus on the exam.
+this won't be any sort of focus on the exam.
 
-* These are now fully support but "The concept of a `bundle` is not the emphasis for new releases going forward."
+* These are now fully supported but "The concept of a `bundle` is not the emphasis for new releases going forward."
 * A stack file is a particular type of v3 compose file.
 * These are for maintain multi-service applications.
 * Still experimental?
@@ -40,7 +40,8 @@ this wont' be any sort of focus on the exam.
 
 Should probably explore volumes more.
 
-* version 3 of compose only allows deploying pre-built images when running deploy stack.
+* version 3 of compose only supports deploying pre-built images when running `doker deploy stack -f docker-compose.yml`.
+  * This makes sense since the image needs to be accessible to every node in the cluster.
 * build context can be a github repo.
 
 # Diagnose Broken services
